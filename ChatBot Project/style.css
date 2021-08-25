@@ -1,0 +1,124 @@
+:root{
+    --body-bg:rgb(209, 232, 241);
+    
+    --chatApp-bg:radial-gradient(circle, rgba(227,227,233,1) 3%, rgba(226,226,236,0.7511205165660014) 48%, rgba(183,223,231,1) 100%);
+    --border: 1px solid #738276;
+    --boo-msg:#e2b7d2;
+    --anonym-msg:#9ca1eb;
+}
+html{
+    box-sizing: border-box;
+    background: var(--body-bg);
+}
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing:inherit ;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    background-image: var(--body-bg);
+    font-family:'Poppins', sans-serif; ;
+}
+.chatApp{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 850px;
+    margin: 20px 10px;
+    border: var(--border);
+    border-radius: 10px;
+    background: var(--chatApp-bg);
+   
+}
+.chat-head{
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    border-bottom: var(--border);
+    background: rgb(99, 110, 177);
+    color:white;
+    border-radius: 10px;
+}
+.main-body{
+    flex: 1;
+    
+    padding: 10px;
+}
+.main-body::-webkit-scrollbar{
+    width:5px;
+}
+.main-body::-webkit-scrollbar-track{
+    background: rgb(0, 202, 252);
+}
+.main-body::-webkit-scrollbar-thumb{
+    background: rgb(87, 138, 231);
+}
+.chat{
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 10px;
+}
+.chat:last-of-type{
+    margin: 0;
+}
+.chat-bubble{
+    width:auto;
+    padding: 10px;
+    border-radius: 20px;
+    background: var(--boo-msg);
+}
+.chat-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.chat-info-name{
+    font-weight: bold;
+    margin-right: 2px;
+}
+.datetime {
+    font-size: 0.65em;
+}
+.left-msg .chat-bubble{
+border-bottom-left-radius: 0;
+}
+.right-msg{
+    flex-direction: row-reverse;
+}
+.right-msg .chat-bubble{
+    background: var(--anonym-msg);
+    border-bottom-right-radius: 0;
+}
+.chat-input{
+    display: flex;
+    padding: 15px;
+    border-top: var(--border);
+    background: cornsilk;
+}
+.chat-input *{
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  font-size: 1em;
+}
+.input-msg{
+    flex: 1;
+    background: rgb(226, 226, 218);
+}
+.sending-msg{
+    margin-left: 10px;
+    background: darkslateblue;
+    color: floralwhite;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.sending-msg:hover{
+    background: blue;
+}
