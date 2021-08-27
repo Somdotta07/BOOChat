@@ -1,19 +1,19 @@
 :root{
     --body-bg:rgb(209, 232, 241);
     
-    --chatApp-bg:radial-gradient(circle, rgba(227,227,233,1) 3%, rgba(226,226,236,0.7511205165660014) 48%, rgba(183,223,231,1) 100%);
-    --border: 1px solid #738276;
-    --boo-msg:#e2b7d2;
-    --anonym-msg:#9ca1eb;
+    --chatApp-bg:radial-gradient(circle, rgba(227,227,233,1) 3%, rgba(226,226,236,0.7511205165660014) 48%, rgba(183,223,231,0.5) 100%);
+    --boo-msg:#e6c9db;
+    --anonym-msg:#b9bacc;
 }
 html{
     box-sizing: border-box;
     background: var(--body-bg);
+    font-size: 100%;
 }
 *,*::before,*::after{
     margin: 0;
     padding: 0;
-    box-sizing:inherit ;
+    box-sizing: border-box ;
 }
 body{
     display: flex;
@@ -23,40 +23,57 @@ body{
     background-image: var(--body-bg);
     font-family:'Poppins', sans-serif; ;
 }
+/*  @media ---Taken from dZone.com-----*/
+@media (min-width: 640px) { body
+     {font-size:1rem;
+      align-items: center;}
+     } 
+@media (min-width:960px) { body {font-size:1.2rem;} } 
+@media (min-width:1100px) { body {font-size:1.5rem;} } 
+
 .chatApp{
     display: flex;
     flex-flow: column wrap;
     justify-content: space-between;
     width: 100%;
-    max-width: 850px;
+    max-width: 600px;
+    height: calc(100% - 50px);
     margin: 20px 10px;
     border: var(--border);
-    border-radius: 10px;
+    border-radius: 20px;
     background: var(--chatApp-bg);
-   
+    
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 .chat-head{
     display: flex;
     justify-content: space-between;
     padding: 12px;
     border-bottom: var(--border);
-    background: rgb(99, 110, 177);
+    background: rgb(53, 53, 58);
     color:white;
-    border-radius: 10px;
+    border-radius: 15px;
+    box-shadow: inherit;
+    margin:3px 2px 3px 2px;
 }
 .main-body{
     flex: 1;
-    
+    overflow-y: auto;
     padding: 10px;
+   
 }
 .main-body::-webkit-scrollbar{
-    width:5px;
+width: 15px;
 }
 .main-body::-webkit-scrollbar-track{
     background: rgb(0, 202, 252);
+    
 }
 .main-body::-webkit-scrollbar-thumb{
     background: rgb(87, 138, 231);
+}
+.main-body::-webkit-scrollbar-thumb:hover{
+    background: blue;
 }
 .chat{
     display: flex;
@@ -71,6 +88,8 @@ body{
     padding: 10px;
     border-radius: 20px;
     background: var(--boo-msg);
+    
+    
 }
 .chat-info{
     display: flex;
@@ -84,12 +103,67 @@ body{
 }
 .datetime {
     font-size: 0.65em;
+    font-weight: 400;
+    font-style: italic;
 }
 .left-msg .chat-bubble{
 border-bottom-left-radius: 0;
+width: 50%;
+animation: fadeIn ease 5s;
+  -webkit-animation: fadeIn ease 5s;
+  -moz-animation: fadeIn ease 5s;
+  -o-animation: fadeIn ease 5s;
+  -ms-animation: fadeIn ease 5s;
+
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+  @-moz-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+  }
 }
 .right-msg{
     flex-direction: row-reverse;
+   
+    
 }
 .right-msg .chat-bubble{
     background: var(--anonym-msg);
@@ -97,19 +171,24 @@ border-bottom-left-radius: 0;
 }
 .chat-input{
     display: flex;
+    border: none;
     padding: 15px;
-    border-top: var(--border);
+    
     background: cornsilk;
+    margin:2px 3px 2px 3px;
+    border-radius: 15px;
+   
 }
 .chat-input *{
-  padding: 10px;
-  border: none;
-  border-radius: 3px;
+  
+  padding: 8px;
+ 
+  border-radius: 4px;
   font-size: 1em;
 }
 .input-msg{
-    flex: 1;
-    background: rgb(226, 226, 218);
+    flex:  1 ;
+    background: rgb(227, 235, 232);
 }
 .sending-msg{
     margin-left: 10px;
