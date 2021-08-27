@@ -79,7 +79,7 @@ function formatDate(today) {
 
   }
   
-function get(selector, root = document) {
+function get(selector, root = document) { // Copied from Codepen
     return root.querySelector(selector);
   }
 
