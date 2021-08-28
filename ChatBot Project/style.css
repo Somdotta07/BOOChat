@@ -44,19 +44,23 @@ body{
     color:white;
     border-radius: 10px;
 }
-.main-body{
+.chat-body{
     flex: 1;
     
     padding: 10px;
 }
 .main-body::-webkit-scrollbar{
     width:5px;
+    
 }
 .main-body::-webkit-scrollbar-track{
     background: rgb(0, 202, 252);
 }
 .main-body::-webkit-scrollbar-thumb{
     background: rgb(87, 138, 231);
+}
+.main-body::-webkit-scrollbar-thumb:hover{
+    background: blue;
 }
 .chat{
     display: flex;
