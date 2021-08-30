@@ -5,12 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/da7ecc23a0.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://kit.fontawesome.com/da7ecc23a0.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="#">
     <title>Chat Application Project</title>
 </head>
 <body>
@@ -22,43 +21,21 @@
             </div>
         </header>
 
-        <main id = "main-body"  class="main-body">
-            
-            <!------------------Chat Bubbles----------------------------------->
-                    <div class="chat left-msg">
-                        
-                        <div class="chat-bubble">
-                            <div class="chat-info">
-                                <div class="chat-info-name">Boo </div>
-                                
-                                
-                            </div>
-                            <div class="chat-text"> Hola,I'm Boo.Who are you?
-                              
-                            </div>
-                            <div class="chat-datetime"></div>
-                        </div>
-                     </div>
-                     <div class=" chat right-msg" style="display: none;">
-                       
-                       
-                    </div>
-                
-                
-            </main>
-            <!---Input Area----->
-                     <form class="chat-input">    
-                    <input type="text" id= "input-msg"  class="input-msg" placeholder="Type your message">
-                   <button type="submit" id="send" class="sending-msg">Send</button>
-                </form>        
-            
+        <div id="main-body"class="main-body">
 
-            </section>
+        </div>
+         <div class="input-Box">
+        <div  id="inputmsg" class="inputmsg" placeholder="Type your message here" contenteditable="true"></div>
+        <div><button id="send" type="" class="btn">Send</button>
+        </div>
+      </div>
 
 
-            
-            
+
+
+
+
 <script src="script.js"></script>
-   
+
 </body>
 </html>
