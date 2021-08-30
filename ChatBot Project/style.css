@@ -56,13 +56,15 @@ body{
     box-shadow: inherit;
     margin:3px 2px 3px 2px;
 }
-.main-body{
+.chat-body{
     flex: 1;
     overflow-y: auto;
     padding: 10px;
    
 }
 .main-body::-webkit-scrollbar{
+
+    
 width: 15px;
 }
 .main-body::-webkit-scrollbar-track{

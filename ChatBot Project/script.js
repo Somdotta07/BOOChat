@@ -18,16 +18,35 @@ const Person_Name ="Anonymous";
 
 //Typing and Sending msg
 
-inputTextArea.addEventListener ("submit",event => {
-    event.preventDefault();
+//inputTextArea.addEventListener ("submit",event => {     
+   // event.preventDefault();
 
-    const newText =inputText.value;
-    if(!newText) return;
+   // const newText =inputText.value;
+   // if(!newText) return;
 
     appendMessage(Person_Name,"right",newText);
    
     inputText.value = "";
     booReply();
+   // appendMessage(Person_Name,"right",newText);
+   
+   // inputText.value = "";
+   // booReply();
+//});
+
+//
+    $(function(){
+    $("sending-msg").click(function(e){
+        e.preventDefault();
+
+        const newText =$(".input-msg").value();
+         if(!newText) return;
+
+        appendMessage(Person_Name,"right",newText);
+   
+          inputText.value = "";
+         booReply();
+    });
 });
 
 //Showing msg in the body

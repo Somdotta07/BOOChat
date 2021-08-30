@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/da7ecc23a0.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet"> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/da7ecc23a0.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="#">
     <title>Chat Application Project</title>
 </head>
 <body>
@@ -21,7 +22,7 @@
             </div>
         </header>
 
-        <main class="main-body">
+        <main id = "main-body"  class="main-body">
             
             <!------------------Chat Bubbles----------------------------------->
                     <div class="chat left-msg">
@@ -46,10 +47,10 @@
                 
             </main>
             <!---Input Area----->
-                           <form class="chat-input">
-                    <input type="text" class="input-msg" placeholder="Type your message">
-                    <button type="submit" class="sending-msg">Send</button>
-                           </form>
+                     <form class="chat-input">    
+                    <input type="text" id= "input-msg"  class="input-msg" placeholder="Type your message">
+                   <button type="submit" id="send" class="sending-msg">Send</button>
+                </form>        
             
 
             </section>
