@@ -5,13 +5,16 @@ const chatBody = get (".main-body");
 
 const Boo_Msgs =
  ["Welcome to my chat room.",
-"How are you?",
+"How are you?",'Nice to meet you',"What do you do?",
 "Sorry, I don't understand your message.",
 "Thanks for spending time with me.",
-"I'm tired!"];
+"Bye, See you soon."];
 
 const Boo_Name = "Boo";
 const Person_Name ="Anonymous";
+
+
+
 
 //Typing and Sending msg
 
@@ -22,6 +25,7 @@ const Person_Name ="Anonymous";
    // if(!newText) return;
 
     appendMessage(Person_Name,"right",newText);
+   
     inputText.value = "";
     booReply();
    // appendMessage(Person_Name,"right",newText);
@@ -44,6 +48,7 @@ const Person_Name ="Anonymous";
          booReply();
     });
 });
+
 //Showing msg in the body
 function appendMessage(name,side,text){
     const textHTML =` <div class="chat ${side}-msg">
@@ -62,31 +67,41 @@ function appendMessage(name,side,text){
 
 
     chatBody.insertAdjacentHTML("beforeend",textHTML);
-    chatBody.scrollTop += 500;
+ 
+ 
+    chatBody.scrollTop = chatBody.scrollHeight; 
 }
 
 // Automatic reply
  
 function booReply(){
-    const rply= random (0,Boo_Msgs.length-1);
+    const rply= random(0, Boo_Msgs.length-1);
+
     const newText =Boo_Msgs[rply];
-    const delay  = newText.split(" ").length * 100;
+    const delay  = newText.split(" ").length * 10;
 
     setTimeout(()=>{
         appendMessage(Boo_Name,"left",newText);
     }, delay);
 }
-
-function formatDate(date) {
-    const h = "0" + date.getHours();
-    const m = "0" + date.getMinutes();
+//- DateTime -Took help from phoenixnap.com---
+function formatDate(today) {
   
-    return `${h.slice(-2)}:${m.slice(-2)}`;
+   var today = new Date();
+
+   var dt = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+   
+   var t= today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+   
+   var dateTime = dt+ ' '+ t;
+   return `${dateTime}`;
+
   }
-function get(selector, root = document) {
+  
+function get(selector, root = document) { // Copied from Codepen
     return root.querySelector(selector);
   }
 
-  function random(min, max) {
-    return Math.floor(Math.random() * (max - min) + min);
+  function random(a, b) {
+    return Math.floor(Math.random() * (b -a) + a);
   }
